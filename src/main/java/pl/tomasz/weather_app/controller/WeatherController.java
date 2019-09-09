@@ -22,7 +22,7 @@ public class WeatherController {
     String displayWeather(Model model) {
         model.addAttribute("weatherForecast", weatherService.getWeatherForecastForCity());
 
-        return "weather-page";
+        return "weather_page";
     }
 //    @GetMapping("/x")
 //    String fff(Model model){
