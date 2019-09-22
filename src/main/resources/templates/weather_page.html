@@ -5,33 +5,28 @@
     <title>Weather forecast</title>
 </head>
 <body>
-<h2>Weather forecast - London</h2>
+<!--<h2>Weather forecast - London</h2>-->
 <table>
     <thead>
     <tr>
-        <th>City</th>
-        <th>Temperature</th>
-        <th>Pressure</th>
-        <th>Humidity</th>
-        <th>Wind</th>
+        <th>City </th>
+        <th>Temperature </th>
+        <th>Pressure </th>
+        <th>Humidity </th>
+        <th>wind </th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td th:text="${weatherForecast.name}">Warszawa</td>
-        <td th:text="${weatherForecast.main.temp}">36</td>
+<!--   wilgottność i wiatr     tutaj dodać -->
+        <td th:text="${weatherForecast.name}"></td>
+        <td th:text="${weatherForecast.main.temp}"></td>
         <td th:text="${weatherForecast.main.pressure}">1000</td>
+        <td th:text="${weatherForecast.main.humidity}">1000</td>
+        <td th:text="${weatherForecast.main.wind}">1000</td>
     </tr>
     </tbody>
-    <form action="#" th:action="@{/handle-form}" method="post">
-        <p>Temperature: <input type="text" name="name"/></p>>
-        <p>Pressure: <input type="text" name="name"/></p>>
-        <p>Humidity: <input type="text" name="name"/></p>>
-        <p>Wind: <input type="text" name="name"/></p>>
-        <p><input type="submit" name="pressed-button" value="Save"/>
-            <input type="submit" name="pressed-button" value="Cancel"/>
-            <input type="reset" value="Reset"/></p>
-    </form>
+
 
 </table>
 </body>

@@ -18,62 +18,6 @@ import java.util.List;
 public class WebController {
 
 
-//
-//@RequestMapping(value ="/showWeather", method = RequestMethod.POST )
-//    public String showWeather
-//        (@Valid @ModelAttribute WeatherForecast weatherForecast, BindingResult errors, Model model){
-//    if (!errors.hasErrors()) {
-//        // get mock objects
-//        List<WeatherForecast> weatherForecasts = WeatherForecastUtils.buildWeatherForcasts();
-//        // add current student
-//        weatherForecasts.add(WeatherForecast);
-//        model.addAttribute("weatherForecasts", weatherForecasts);
-//            }
-//    return ((errors.hasErrors()) ? "addStudent.html" : "listStudents.html");
-//
-
-
-//    /** to z git huba
-//     * Handles requests for the student model.
-//     *
-//     */
-//    @Controller
-//    public class StudentController {
-//
-//        @RequestMapping(value = "/saveStudent", method = RequestMethod.POST)
-//        public String saveStudent(@Valid @ModelAttribute Student student, BindingResult errors, Model model) {
-//            if (!errors.hasErrors()) {
-//                // get mock objects
-//                List<Student> students = StudentUtils.buildStudents();
-//                // add current student
-//                students.add(student);
-//                model.addAttribute("students", students);
-//            }
-//            return ((errors.hasErrors()) ? "addStudent.html" : "listStudents.html");
-//        }
-//
-//        @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
-//        public String addStudent(Model model) {
-//            model.addAttribute("student", new Student());
-//            return "addStudent.html";
-//        }
-//
-//        @RequestMapping(value = "/listStudents", method = RequestMethod.GET)
-//        public String listStudent(Model model) {
-//
-//            model.addAttribute("students", StudentUtils.buildStudents());
-//
-//            return "listStudents.html";
-//        }
-//
-//    }
-// to mojj wcześniejszy kod !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-//    @PostMapping("/handle-form")
-//    public String handleFormParams(@ModelAttribute DtoForm input) {
-//        City city = new City(input.getCityName());
-
 
         private static final Logger logger = LoggerFactory.getLogger(WebController.class);
         private WeatherService weatherService;
@@ -86,5 +30,15 @@ public class WebController {
             model.addAttribute("data", new DtoForm("zz"));
             return "form";
 
+        }
+        @PostMapping("/weather-for-city")
+        public String showWeatherForCity(@RequestParam("city-name") String city,Model model){
+
+        logger.debug("showWeatherforcity() city:[{}]",city);
+        // query for weather-rest
+          logger.debug(""+  weatherService.getWeatherForCity(city));
+            //add model parametr i zwrócić template
+            model.addAttribute("weatherForecast",weatherService.getWeatherForCity(city));
+        return "weather_page";
         }
     }

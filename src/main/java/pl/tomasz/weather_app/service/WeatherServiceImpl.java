@@ -11,16 +11,11 @@ import java.util.List;
 @Service
 public class WeatherServiceImpl implements WeatherService {
 
-//    List<City> citylist =new ArrayList<City>();
-//
-//    citylist.add(new City("Kraków",url))
 
-    // temperatura z celcjuszem  dla warszawy działa
+//    temperatura z celcjuszem  dla warszawy działa na sztywno
 //    private static final String url = "https://api.openweathermap.org/data/2.5/weather?q=warszawa,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708";
-//    temperatura dla ciechanowa
-    private static final String url = "https://api.openweathermap.org/data/2.5/weather?q=ciechanów,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708";
-//    to jest dobry przykład
-//    private static final String url = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
+//    temperatura dla ciechanowa -zamiana na %s aby było uniwersalnie
+    private static final String url = "https://api.openweathermap.org/data/2.5/weather?q=%s,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708";
 
     private RestTemplate restTemplate;
 
@@ -29,11 +24,20 @@ public class WeatherServiceImpl implements WeatherService {
     }
 
     public WeatherForecast getWeatherForecastForCity() {
-        return restTemplate.getForObject(url, WeatherForecast.class);
+        return restTemplate.getForObject(String.format(url,"ciechanów"), WeatherForecast.class);
+    }
+
+    @Override
+    public WeatherForecast getWeatherForCity(String cityName) {
+
+        return restTemplate.getForObject(String.format(url, cityName), WeatherForecast.class);
     }
 
 
 }
+
+
+
 
 
 

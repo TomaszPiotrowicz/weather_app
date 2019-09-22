@@ -6,6 +6,8 @@ import pl.tomasz.weather_app.weather.WeatherForecast;
 public interface WeatherService {
 
     WeatherForecast getWeatherForecastForCity();
-//    WeatherForecast getx();
+
+    WeatherForecast getWeatherForCity(String cityName);
+
 
 }

@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:height="http://www.w3.org/1999/xhtml">
-<!--to z sieci kod script - script-->
-<script src="https://api.openweathermap.org/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-    function gettingJSON(){
-        document.write("jquery loaded");
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=warszawa,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708",function(json){
-            document.write(JSON.stringify(json));
-        });
-    }
-</script>
+<!--&lt;!&ndash;to z sieci kod script - script&ndash;&gt;-->
+<!--<script src="https://api.openweathermap.org/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<!--<script>-->
+<!--    function gettingJSON() {-->
+<!--        document.write("jquery loaded");-->
+<!--        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=warszawa,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708", function (json) {-->
+<!--            document.write(JSON.stringify(json));-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
 
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
 </head>
 
-    <fieldset style= background-color:yellow  >
-        <form th:action="@{/login}" method="post">
-<!--        <form action="https://openweathermap.org/" th:action="" method="get">-->
-<font size="4" color="black">
+<fieldset style=background-color:yellow>
+    <form th:action="@{/weather-for-city}" method="post">
+        <!--        <form action="https://openweathermap.org/" th:action="" method="get">-->
+        <font size="4" color="black">
 
-        <p>Wybierz prognozę pogody dla : <select name="City name" style="background-color: red">
+            <p>Wybierz prognozę pogody dla : <select name="city-name" style="background-color: red">
 
-            <option selected> Miasta</option>
-            <option> Stalowa Wola</option>
-            <option> Gdańsk </option>
-            <option> Warszawa<a href="https://api.openweathermap.org/data/2.5/weather?q=warszawa,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708"></a></option>
-            <option> Ciechanów <a href="https://api.openweathermap.org/data/2.5/weather?q=ciechanów,pl&units=metric&appid=b044c1e2cf9ef6b840bdb054b2898708"></a> </option>
-            <option> Kraków</option>
-        </select>
+                <option selected> Miasta</option>
+                <option>Stalowa Wola</option>
+                <option>Gdańsk</option>
+                <option>Warszawa</option>
+                <option>Ciechanów</option>
+                <option>Kraków</option>
+            </select>
 
-    <p><input type="submit" style="background-color:red "   name="pressed-button"  value="Save"/>
-        <input type="submit" style="background-color: red"name="pressed-button" value="Cancel"/>
-        <input type="reset"style="background-color: red" value="Reset"/></p>
+            <p><input type="submit" style="background-color:red " name="pressed-button" value="Save"/>
+                <input type="submit" style="background-color: red" name="pressed-button" value="Cancel"/>
+                <input type="reset" style="background-color: red" value="Reset"/></p>
 
-</font>
-            </form>
+        </font>
+    </form>
 
-    </fieldset>
+</fieldset>
 
 </form>
-<body >
+<body>
 
 </body>
 </html>

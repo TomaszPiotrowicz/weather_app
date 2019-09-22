@@ -24,17 +24,6 @@ public class WeatherRestController {
     @GetMapping(value = "/weather/")
     WeatherForecast getWeatherAsJson() {
         return weatherService.getWeatherForecastForCity();
-//    } @GetMapping("/show-form")
-//    WeatherForecast x(){
-//        return  weatherService.getx();
-//    }
-//    @PostMapping("handle-form")
-//    public String handleFormParams(@ModelAttribute Forecast input){
-//        Forecast cityForecast =
-//                new Forecast(input.getCityName(),input.getPressure(),input.getTemp(),input.getHumidity(),input.getWind());
-//        return "redirect:/show-form";
-//    }
-//}
 
 
     }}

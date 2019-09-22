@@ -60,6 +60,7 @@ public class Forecast {
     }
 
     public void setHumidity(BigDecimal humidity) {
+
         this.humidity = humidity;
     }
 
