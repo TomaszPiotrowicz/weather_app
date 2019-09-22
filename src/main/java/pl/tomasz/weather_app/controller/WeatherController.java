@@ -24,11 +24,7 @@ public class WeatherController {
 
         return "weather_page";
     }
-//    @GetMapping("/x")
-//    String fff(Model model){
-//        model.addAttribute("weatherForecast",weatherService.getx());
-//        return "weather-page";
-//    }
+
 }
 
 
